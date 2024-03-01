@@ -1,0 +1,24 @@
+<section class="home">
+  <header>
+    <h1 class="noto-serif">Github Issue Explorer</h1>
+    <p>Enter your API token to start browsing the issue of public repositories</p>
+  </header>
+  <form [formGroup]="tokenForm" (ngSubmit)="send()">
+
+    <label for="token" class="form-label">Your API Token</label>
+    <input type="text" formControlName="token" class="form-input">
+    <p class="error text-center" *ngIf="tokenForm.get('token')?.invalid && tokenForm.get('token')?.touched && !errorMessage">No token found. Github token is required. Please follow
+      these
+      instructions to generate a new token
+      <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank" class="link">click here for
+        guidence</a>
+    </p>
+    <p *ngIf="errorMessage" class="error text-center"> {{errorMessage}}! The token you provided is invalid. Please follow these instructions to generate a new token <a
+        href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank" class="link">click here for
+        guidence</a>
+    </p>
+    <img *ngIf="isLoading" class="spinner" src="/assets/spinner.gif" alt="spinner">
+    <button type="submit" class="submit-btn" [disabled]="tokenForm.invalid">Start Browsing</button>
+    <p class="info">It's only stored in your machine as long as you're on the page</p>
+  </form>
+</section>

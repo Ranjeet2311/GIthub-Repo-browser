@@ -1,0 +1,21 @@
+<section class="list-wrap">
+  <div class="list-header">
+    <h1>List of Public Repositories</h1> <a routerLink="">
+      <button class="btn">Change Token</button>
+    </a>
+  </div>
+  <img *ngIf="githubService.responseData.length === 0" class="spinner" src="/assets/spinner.gif" alt="">
+  <div class="single-outer-wrap">
+    <a routerLink="/{{item.owner.login}}/{{item.name}}" class="single-repo" *ngFor="let item of githubService.responseData" :key="i">
+      <div>
+        <p class="name"> {{item.name| titlecase }} </p>
+        <p class="desc"> {{item.description}} </p>
+        <p>{{item.issues.nodes.length}} Issues Found</p>
+      </div>
+      <div>
+        <p class="owner">{{item.owner.login}}</p>
+        <p class="star"> Stargazers:{{item.stargazers.totalCount}}</p>
+      </div>
+    </a>
+  </div>
+</section>

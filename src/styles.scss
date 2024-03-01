@@ -1,1 +1,230 @@
-/* You can add global styles to this file, and also import other style files */
+$cursive-font: "Indie Flower", cursive;
+$normal-font: "Roboto", sans-serif;
+$color-warning: red;
+$white-font: white;
+$base-font-color: #5b86e5;
+
+@mixin font($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $cursive-font;
+}
+
+.error {
+  color: $color-warning;
+  @include font(18px, 28px);
+  font-family: $normal-font;
+  margin: 6px auto;
+  max-width: 600px;
+}
+.text-center {
+  text-align: center;
+}
+.pt-30 {
+  padding-top: 30px;
+}
+.pb-30 {
+  padding-bottom: 30px;
+}
+.link {
+  color: $base-font-color;
+  font-weight: 500;
+  margin-left: 6px;
+}
+body {
+  background-color: rgb(240, 240, 240, 0.6);
+}
+
+header {
+  h1 {
+    text-align: center;
+    @include font(48px, 58px);
+  }
+}
+
+.spinner {
+  width: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home {
+  padding-top: 120px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
+    p {
+      font-family: $normal-font;
+      @include font(20px, 32px);
+      max-width: 400px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    label {
+      font-family: $normal-font;
+      font-weight: 500;
+      @include font(18px, 28px);
+    }
+
+    input {
+      @include font(18px, 28px);
+      margin: 30px auto 15px;
+      font-family: $cursive-font;
+      width: 400px;
+      border: 1px solid #4e4c4c;
+    }
+
+    .info {
+      margin-top: 50px;
+      font-family: $cursive-font;
+    }
+  }
+}
+
+.submit-btn,
+.btn {
+  @include font(22px, 32px);
+  padding: 8px 40px;
+  font-family: $normal-font;
+  font-weight: 400;
+  border-radius: 8px;
+  margin-top: 15px;
+  color: $white-font;
+  cursor: pointer;
+  border: #36d1dc;
+  background: #36d1dc;
+  background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5);
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  box-shadow: 4px 4px 16px black;
+  max-width: max-content;
+
+  &:hover {
+    box-shadow: 2px 2px 12px black;
+  }
+}
+
+// ------List page----------
+
+.list-wrap {
+  padding-bottom: 80px;
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background: #36d1dc;
+    background: -webkit-linear-gradient(to right, #5b86e5, #36d1dc);
+    background: linear-gradient(to right, #5b86e5, #36d1dc);
+
+    h1 {
+      font-size: 42px;
+      line-height: 56px;
+    }
+  }
+  .spinner {
+    width: 120px;
+  }
+}
+
+.single-outer-wrap {
+  padding: 0 40px 60px;
+}
+.single-repo {
+  width: 100%;
+  background-color: #4a75d4;
+  border-radius: 8px;
+  border: 1px solid rgb(92, 92, 92);
+  margin-top: 16px;
+  color: white;
+  padding: 10px 20px;
+  font-family: $normal-font;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  @include font(20px, 38px);
+
+  .name {
+    @include font(26px, 36px);
+    font-weight: 500;
+  }
+  .desc {
+    max-width: 600px;
+    margin: 4px 0 4px;
+    @include font(16px, 22px);
+  }
+  .owner {
+    font-family: $cursive-font;
+    font-weight: 600;
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 16px black;
+    background-color: white;
+    color: #5b86e5;
+  }
+}
+
+// -----------------------reop-details -----------------
+
+.reop-details {
+  height: 100vh;
+  font-family: $normal-font;
+  @include font(26px, 36px);
+
+  .repo-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 30px;
+    color: $white-font;
+    background: #36d1dc;
+    background: -webkit-linear-gradient(to right, #5b86e5, #36d1dc);
+    background: linear-gradient(to right, #5b86e5, #36d1dc);
+
+    .repo-name {
+      max-width: 400px;
+      @include font(24px, 34px);
+      font-weight: 600;
+    }
+    .repo-desc {
+      max-width: 400px;
+      margin-top: 6px;
+      @include font(16px, 22px);
+    }
+    .repo-owner,
+    .repo-star {
+      margin-top: 12px;
+      @include font(20px, 32px);
+      font-family: $cursive-font;
+      font-weight: 600;
+    }
+  }
+}

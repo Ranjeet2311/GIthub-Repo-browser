@@ -1,0 +1,27 @@
+<div class="reop-details" *ngFor="let item of selectedRepo">
+  <div class="repo-info">
+    <div>
+      <p class="repo-name">Title: {{item.name | titlecase }}</p>
+      <p class="repo-desc"> Desc: {{item.description | titlecase}} </p>
+    </div>
+    <div>
+      <a routerLink="">
+        <button class="btn">Change Token</button>
+      </a>
+      <p *ngIf="item.
+      owner.login" class="repo-owner">Repo Owner : {{ item.
+        owner.login}} </p>
+      <p *ngIf="item.stargazers.
+      totalCount" class="repo-star">Star: {{item.stargazers.
+        totalCount}} </p>
+    </div>
+  </div>
+  <h2 class="text-center pt-30 pb-30">Repositoy issues</h2>
+  <div class="single-outer-wrap">
+    <div class="single-repo" *ngFor="let issue of item.issues.nodes">
+      <p> {{issue.title | titlecase }}</p>
+      <p class="desc"> {{issue.
+        createdAt | date:"MMM dd, yyyy 'at' hh:mm a"}} </p>
+    </div>
+  </div>
+</div>
