@@ -10,7 +10,6 @@ interface params {
 @Component({
   selector: 'app-repository-details',
   templateUrl: './repository-details.component.html',
-  styleUrl: './repository-details.component.scss',
 })
 export class RepositoryDetailsComponent implements OnInit {
   public selectedRepo: any[] = [];

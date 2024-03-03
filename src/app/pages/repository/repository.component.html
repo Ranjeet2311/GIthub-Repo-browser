@@ -17,5 +17,11 @@
         <p class="star"> Stargazers:{{item.stargazers.totalCount}}</p>
       </div>
     </a>
+    <div class="button-wrap">
+      <button class="mr-30" [ngClass]="{disabled : !this.githubService.hasPreviousPage, btn : this.githubService.hasPreviousPage}" (click)="previousPage()"
+        [disabled]="!this.githubService.hasPreviousPage">Back</button>
+      <button [ngClass]="{disabled : !this.githubService.hasNextPage, btn : this.githubService.hasNextPage}" (click)="next()"
+        [disabled]="!this.githubService.hasNextPage">Next</button>
+    </div>
   </div>
 </section>

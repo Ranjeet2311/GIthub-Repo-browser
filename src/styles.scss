@@ -40,6 +40,9 @@ h5 {
 .pb-30 {
   padding-bottom: 30px;
 }
+.mr-30 {
+  margin-right: 30px;
+}
 .link {
   color: $base-font-color;
   font-weight: 500;
@@ -100,6 +103,7 @@ header {
     }
 
     .info {
+      @include font(20px, 28px);
       margin-top: 50px;
       font-family: $cursive-font;
     }
@@ -128,6 +132,20 @@ header {
   }
 }
 
+.disabled {
+  @include font(22px, 32px);
+  padding: 8px 40px;
+  font-family: $normal-font;
+  font-weight: 400;
+  border-radius: 8px;
+  margin-top: 15px;
+  color: $white-font;
+  cursor: pointer;
+  background: rgb(62, 62, 62);
+  box-shadow: 4px 4px 16px black;
+  max-width: max-content;
+}
+
 // ------List page----------
 
 .list-wrap {
@@ -148,6 +166,14 @@ header {
   }
   .spinner {
     width: 120px;
+  }
+
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
